@@ -1,0 +1,25 @@
+{
+  "name": "ejs-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "devStart": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dompurify": "^2.3.8",
+    "ejs": "^3.1.8",
+    "express": "^4.16.3",
+    "jsdom": "^19.0.0",
+    "lodash": "^4.17.11",
+    "marked": "^4.0.16",
+    "mongoose": "^5.3.6",
+    "string-strip-html": "^9.1.12"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
