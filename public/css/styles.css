@@ -10,7 +10,7 @@ body{
 .container-fluid {
     padding-top: 5px;
     padding-bottom: 5px;
-    padding-left: 80px;
+    padding-left: 10px;
     background-color: rgb(32, 32, 32);
 }
 .navbar {
@@ -64,7 +64,7 @@ a:hover {
 }
 
 .container-content{
-  margin: 10px 300px 100px 300px;
+  margin: 50px   100px 100px 100px;
 }
 
 a {
