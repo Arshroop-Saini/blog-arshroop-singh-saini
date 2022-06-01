@@ -1,21 +1,39 @@
 
 <%- include("partials/header"); -%>
 
-    <h1>Home</h1>
-    <p> <%= startingContent %> </p>
+<div class="container-content">
+   <label style="font-family: IBM Plex Sans, sans-serif; font-weight: 700; font-size:
+   18px">Search</label>
+    <input placeholder="Functionality under construction, will be available soon :)" onkeyup="sendData(this)" type="text" id="search-box" style="font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
+    16px; height: 35px; width: 100%; background-color: rgba(98, 98, 98, 0.276);">
+<section id="searchResults">
 
+</section>
+
+<script>
+  function sendData(e) {
+    fetch('getPosts', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({payload: e.value})
+    });
+  }
+</script>
 
   <%  posts.forEach(function(post){ %>
 
-    <h1><%=post.title%></h1>
-    <h5><%=post.date.toLocaleDateString()%></h5>
-    <p>
-    <%=post.description.substring(0, 100) + " ..."%>
-    <a href="/posts/<%=post._id%>">Read More</a>
+    <h1 style="font-family: IBM Plex Sans, sans-serif; font-weight: 700; font-size:
+    36px"><%=post.title%></h1>
+    <% var options = { year: 'numeric', month: 'long', day: 'numeric' }; %>
+    <p style="font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 16px;"><%=post.date.toLocaleDateString('en-us', options)%></p>
+    <p style="font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 18px;">
+    <%=post.description %>
+    <br>
+    <a style="font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 18px;" href="/posts/<%=post._id%>">Read More</a>
     </p>
 
 
     <% }) %>
 
-
+  </div>
 <%- include("partials/footer"); -%>
