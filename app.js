@@ -4,6 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require('mongoose');
+const http = require('http');
 const port= process.env.PORT || 3000;
 
 const app = express();
@@ -72,6 +73,10 @@ const requestedPostId = req.params.postId;
   });
 
 });
+
+setInterval(() => {
+  http.get("https://blog-arshroop-singh-saini.herokuapp.com/");
+}, 25 * 60 * 1000); // every 25 minutes
 
 app.listen(port, function() {
   console.log("Server started sucessfully");
