@@ -2,22 +2,27 @@
 <%- include("partials/header"); -%>
 
 <div class="container-content">
-   <label style="font-family: IBM Plex Sans, sans-serif; font-weight: 700; font-size:
-   18px">Search</label>
-    <input placeholder="Functionality under construction, will be available soon :)" onkeyup="sendData(this)" type="text" id="search-box" style="font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
-    16px; height: 35px; width: 100%; background-color: rgba(98, 98, 98, 0.276);">
-<br>
-<br>
 
-<script>
-  function sendData(e) {
-    fetch('getPosts', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({payload: e.value})
-    });
-  }
-</script>
+<% if(noMatch !== null) { %>
+  
+  <form action="/" method="GET" class="form-inline">
+
+    <input onkeyup="sendData(this)" autofocus placeholder="Search for Blog Posts"  type="text" id="search-box" name="search" style="font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
+    16px; height: 35px; width: 100%; background-color: rgba(98, 98, 98, 0.276);">
+    </form>
+    <center>
+      <h3><%= noMatch %></h3>
+    </center>
+    <% } else { %>
+     
+      <form action="/" method="GET" class="form-inline">
+    
+         <input autofocus placeholder="Search for Blog Posts"  type="text" id="search-box" name="search" style="font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
+         16px; height: 35px; width: 100%; background-color: rgba(98, 98, 98, 0.276);">
+         </form>
+      <% } %>
+<br>
+<br>
 
   <%  posts.forEach(function(post){ %>
 

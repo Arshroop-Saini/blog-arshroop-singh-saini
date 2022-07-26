@@ -12,6 +12,7 @@ const app = express();
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.json())
 app.use(express.static("public"));
 
 mongoose.connect("mongodb+srv://arshroop:Asdfjkl123@personalblog.spfgz.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true });
@@ -25,18 +26,41 @@ const postSchema =  {
 
 const Post = mongoose.model("Post", postSchema);
 
-app.get("/", function(req, res){
-  Post.find({}, function(err, posts){
-    res.render("home", {
-      posts: posts
-      });
-  }).sort({date:"desc"});
-});
+app.get('/',function(req,res){
+  var noMatch = null;
+      if(req.query.search) {
+          const search = new RegExp(escapeRegex(req.query.search), 'gi');
+          
+          Post.find({title:search}, function(err, posts){
+          
+             if(err){
+                 console.log(err);
+             } else {
+                if(posts.length < 1) {
+                    noMatch = "No posts found";
+                }
+                res.render("home", {
+                  posts: posts,
+                  noMatch: noMatch,
+                  });   
+             }
+            }).sort({date:"desc"});
+      } else {
+          // Get all posts from DB
+         Post.find({}, function(err, posts){
+          if(err){
+            console.log(err);
+          }else{
+        res.render("home", {
+          posts: posts,
+          noMatch: noMatch,
+          });
+        }
+      }).sort({date:"desc"});
+      }
+    });
 
-app.post('/getPosts', (req,res)=>{
-  let payload= req.body.payload;
-  console.log(payload);
-});
+
 
 app.get("/compose", function(req, res){
   res.render("compose");
@@ -73,6 +97,10 @@ const requestedPostId = req.params.postId;
   });
 
 });
+
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
 
 setInterval(() => {
   http.get("https://blog-arshroop-singh-saini.herokuapp.com/");
