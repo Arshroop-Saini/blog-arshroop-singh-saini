@@ -18,10 +18,14 @@ app.use(express.static("public"));
 mongoose.connect("mongodb+srv://arshroop:Asdfjkl123@personalblog.spfgz.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true });
 
 const postSchema =  {
-  title: String,
-  date: Date,
-  description: String,
-  content: String,
+  title: {type:String,
+    required:true},
+  date: {type: Date,
+    required:true},
+  description: {type: String,
+    required:true},
+  content: {type: String,
+    required:true},
 };
 
 const Post = mongoose.model("Post", postSchema);

@@ -4,14 +4,14 @@
     <h1>Compose</h1>
     <form class="" action="/compose" method="post">
       <div class="form-group">
-        <label>Title</label>
-        <input  class="form-control" type="text" name="postTitle">
-        <label>Date</label>
-        <input type="date" name="postDate" class="form-control">
-        <label>Description</label>
-        <input type="text" name="postDescription" class="form-control">
-        <label>Post</label>
-        <textarea id="aTag" class="form-control" name="postBody" rows="5" cols="30"></textarea>
+        <label class="required">Title</label>
+        <input  class="form-control" type="text" name="postTitle" required>
+        <label class="required" >Date</label>
+        <input type="date" name="postDate" class="form-control" required>
+        <label class="required" >Description</label>
+        <input type="text" name="postDescription" class="form-control" required>
+        <label class="required">Post</label>
+        <textarea id="aTag" class="form-control" name="postBody" rows="5" cols="30" required></textarea>
       </div>
       <button class="btn btn-primary" type="submit" name="button">Publish</button>
     </form>
