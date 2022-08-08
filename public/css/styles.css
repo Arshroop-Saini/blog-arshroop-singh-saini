@@ -6,6 +6,8 @@ html {
 body{
   background-color: #161a1d;
   color: rgba(250, 249, 246, 0.831);
+  display: grid;
+  grid-template-columns: auto 0px; 
 }
 .container-fluid {
     padding-top: 5px;
@@ -140,4 +142,42 @@ a {
 
 #myBtn:hover {
   background-color: #555; /* Add a dark-grey background on hover */
+}
+
+.container-top {
+  --offset: 100px;
+  z-index: 2;
+  --fade: 120px;
+
+  display: flex;
+  align-items: flex-end;
+  width: 60px;
+  justify-self: end;
+  justify-content: flex-end;
+  -webkit-mask: linear-gradient(#0000 calc(100vh + var(--offset)), #000 calc(100vh + var(--offset) + var(--fade)));
+}
+
+.top {
+  position: sticky;
+  bottom: 20px;      
+  margin-right: 10px; 
+
+  /* visual styling */
+  width: 100%;
+  aspect-ratio: 1;
+  background: rgb(26, 178, 255);
+  border-radius: 10px;
+}
+  
+.top:before {
+  content: "";
+  position: absolute;
+  inset: 30%;
+  transform: translateY(20%) rotate(-45deg);
+  border-top: 5px solid #fff;
+  border-right: 5px solid #fff;
+}
+
+p {
+  font-size: 25px;
 }
