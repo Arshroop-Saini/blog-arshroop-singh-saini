@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json())
 app.use(express.static("public"));
 
-mongoose.connect("mongodb+srv://arshroop:Asdfjkl123@personalblog.spfgz.mongodb.net/?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://arshroop:Asdfjkl123@personalblog.spfgz.mongodb.net/", {useNewUrlParser: true, useUnifiedTopology: true });
 
 const postSchema =  {
   title: {type:String,
