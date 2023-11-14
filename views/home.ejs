@@ -7,8 +7,9 @@
   
   <form action="/" method="GET" class="form-inline">
 
-    <input onkeyup="sendData(this)" autofocus placeholder="Search for Blog Posts"  type="text" id="search-box" name="search" style="font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
-    16px; height: 35px; width: 100%; background-color: rgba(98, 98, 98, 0.276);">
+    <input onkeyup="sendData(this)" autofocus placeholder="Search for Blog Posts"  type="text" id="search-box" name="search" style=" border-inline-color: rgb(0, 102, 0);
+font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
+    16px; height: 35px; width: 100%; background-color: #F7F7F7;">
     </form>
     <center>
       <h3><%= noMatch %></h3>
@@ -17,8 +18,8 @@
      
       <form action="/" method="GET" class="form-inline">
     
-         <input autofocus placeholder="Search for Blog Posts"  type="text" id="search-box" name="search" style="font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
-         16px; height: 35px; width: 100%; background-color: rgba(98, 98, 98, 0.276);">
+         <input autofocus placeholder="Search for Blog Posts"  type="text" id="search-box" name="search" style="border-inline-color: rgb(0, 102, 0); font-family: IBM Plex Sans, sans-serif; font-weight: 400; font-size:
+         16px; height: 35px; width: 100%; background-color: #F7F7F7;">
          </form>
       <% } %>
 <br>
@@ -33,7 +34,7 @@
     <p style="font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 18px;">
     <%=post.description %>
     <br>
-    <a style="font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 18px;" href="/posts/<%=post._id%>">Read More</a>
+    <a style="font-family: IBM Plex Sans, sans-serif; font-weight:700; font-size: 18px;" href="/posts/<%=post._id%>">Read More</a>
     </p>
 
 
