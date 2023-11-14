@@ -49,7 +49,13 @@ a:hover {
   color: rgb(250, 249, 246);
   font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 16px;
 }
-
+.footer a{
+color: rgb(250, 249, 246);
+}
+.footer a:hover {
+    color: rgb(250, 249, 246) !important;
+    text-decoration: none;
+}
 .fa-brands, .fa-solid{
   padding-left: 3px;
   padding-right: 3px;
@@ -136,7 +142,22 @@ color: #ffffff;
   visibility: hidden;
   z-index: 1000;
 }
-
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
 #button.show {
   opacity: 1;
   visibility: visible;
