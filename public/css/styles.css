@@ -43,14 +43,19 @@ a:hover {
 	background-color: rgb(0, 102, 0);
 }
 
-.footer p a{
+.footer p {
 	margin-top: 20px;
 	font-size: 12px;
   color: rgb(250, 249, 246);
   font-family: IBM Plex Sans, sans-serif; font-weight:400; font-size: 16px;
 }
-.footera{
+a.footera{
 color: rgb(250, 249, 246);
+}
+
+a.footera{
+color: rgb(250, 249, 246); !important;
+    text-decoration: none;
 }
 
 .fa-brands, .fa-solid{
