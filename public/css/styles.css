@@ -90,10 +90,7 @@ a {
 color: #ffffff;
 }  
 
-.required:after {
-  content:" *";
-  color: red;
-}
+
 
 .header {
   position: fixed;
