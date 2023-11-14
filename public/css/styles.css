@@ -12,7 +12,7 @@ body{
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 10px;
-    background-color: rgb(32, 32, 32);
+    background-color: rgb(0, 102, 0);
 }
 .navbar {
     padding-top: 10px;
@@ -86,7 +86,8 @@ a {
 .navbar-brand{
   font-family: IBM Plex Sans, sans-serif; 
   font-weight:400; 
-  font-size: 24px; 
+  font-size: 24px;
+color: #ffffff;
 }  
 
 .required:after {
